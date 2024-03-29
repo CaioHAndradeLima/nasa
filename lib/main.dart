@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:nasa_pictures/feature/nasa_picture_widget.dart';
+import 'package:nasa_pictures/feature/pictures/nasa_pictures_widget.dart';
 import 'package:nasa_pictures/theme/custom_theme.dart';
 
 void main() {
@@ -14,7 +14,7 @@ class MyApp extends StatelessWidget {
     return MaterialApp(
       title: 'Flutter Demo',
       theme: CustomTheme.defaultTheme(context),
-      home: const NasaPictureWidget(),
+      home: const NasaPicturesWidget(),
     );
   }
 }

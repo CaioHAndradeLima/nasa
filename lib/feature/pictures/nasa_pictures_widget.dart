@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
-import 'package:nasa_pictures/common/AppBarWidget.dart';
+import 'package:nasa_pictures/common/app_bar_widget.dart';
 
-class NasaPictureWidget extends StatelessWidget {
-  const NasaPictureWidget({super.key});
+class NasaPicturesWidget extends StatelessWidget {
+  const NasaPicturesWidget({super.key});
 
   @override
   Widget build(BuildContext context) {
