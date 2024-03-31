@@ -1,27 +1,35 @@
 
-
 import 'package:nasa_pictures/repository/local/local_repository.dart';
 import 'package:nasa_pictures/repository/model/nasa_picture.dart';
 import 'package:nasa_pictures/repository/remote/remote_repository.dart';
+import 'package:nasa_pictures/usecase/empty_in_use_case.dart';
 import 'package:nasa_pictures/usecase/pictures/get_pictures.dart';
-import 'package:nasa_pictures/usecase/use_case.dart';
+import 'package:nasa_pictures/usecase/pictures/get_pictures_request_fail.dart';
+import 'package:nasa_pictures/usecase/pictures/get_pictures_success.dart';
 
-class GetPicturesUseCase extends UseCase<void, GetPictures> {
-  final LocalRepository localRepository;
-  final RemoteRepository remoteRepository;
+class GetPicturesUseCase extends EmptyInUseCase<GetPictures> {
+  late final LocalRepository _localRepository;
+  late final RemoteRepository _remoteRepository;
 
-  GetPicturesUseCase({required this.localRepository, required this.remoteRepository}) : super();
+  GetPicturesUseCase({
+    required LocalRepository localRepository,
+    required RemoteRepository remoteRepository,
+  }) : super() {
+    _remoteRepository = remoteRepository;
+    _localRepository = localRepository;
+  }
 
   @override
-  Future<GetPictures> call(void init) async {
-    final List<NasaPicture>? listPictures = await localRepository.findPictures();
+  Future<GetPictures> call() async {
+    final List<NasaPicture>? listPictures = await _localRepository.findPictures();
 
     if(listPictures != null) {
       return GetPicturesSuccess(listPicture: listPictures);
     }
 
     try {
-      final listPictures = await remoteRepository.findPictures();
+      final listPictures = await _remoteRepository.findPictures();
+      await _localRepository.insertAll(listPictures);
       return GetPicturesSuccess(listPicture: listPictures);
     } catch(e) {
       return GetPicturesRequestFail();

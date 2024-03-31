@@ -9,6 +9,7 @@ class CustomTheme {
       displayLarge: const TextStyle(
         fontSize: 72,
         fontWeight: FontWeight.bold,
+        color: Colors.white
       ),
       titleLarge: GoogleFonts.roboto(
         fontWeight: FontWeight.bold,
@@ -16,24 +17,29 @@ class CustomTheme {
       ),
       titleMedium: GoogleFonts.roboto(
         fontWeight: FontWeight.bold,
-        color: Colors.black,
+        color: Colors.white,
       ),
       titleSmall: GoogleFonts.roboto(
         fontWeight: FontWeight.bold,
-        color: Colors.black,
+        color: Colors.white,
       ),
       bodyMedium: GoogleFonts.roboto(
-        color: Colors.black,
+        color: Colors.white,
+      ),
+      bodySmall: GoogleFonts.roboto(
+        color: Colors.white,
       ),
     );
   }
 
   static ThemeData defaultTheme(BuildContext context) {
     return ThemeData(
-      colorScheme: ColorScheme.fromSeed(seedColor: Colors.deepPurple),
+      colorScheme: ColorScheme.fromSeed(
+        seedColor: Colors.green,
+        background: Colors.black,
+      ),
       useMaterial3: true,
-      appBarTheme: const AppBarTheme(color: Colors.green, shadowColor: Colors.red,
-          elevation: 1, foregroundColor: Colors.white),
+      appBarTheme: const AppBarTheme(color: Colors.green),
       textTheme: _defaultTextTheme(context),
     );
   }

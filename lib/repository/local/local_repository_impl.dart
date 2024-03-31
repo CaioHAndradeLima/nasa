@@ -1,17 +1,46 @@
 
+import 'package:localstore/localstore.dart';
+import 'package:nasa_pictures/repository/local/filter/picture_local_filter.dart';
 import 'package:nasa_pictures/repository/model/nasa_picture.dart';
-
 import 'local_repository.dart';
 
 class LocalRepositoryImpl extends LocalRepository {
+  late final Localstore _instance;
 
-  @override
-  Future<List<NasaPicture>> findPictures() {
-    throw UnimplementedError();
+  LocalRepositoryImpl({required Localstore instance}) {
+    _instance = instance;
   }
 
   @override
-  Future<NasaPicture?> findOnePicture() {
-    throw UnimplementedError();
+  Future<List<NasaPicture>?> findPictures({PictureLocalFilter? filter}) async {
+    final collection = _instance.collection('picture');
+    final data = await collection.get();
+
+    if(data != null) {
+      final pictures = data.values.map((picture) => NasaPicture.fromMap(picture)).toList();
+      return filter?.applyFilter(pictures) ?? pictures;
+    }
+
+    return null;
+  }
+
+  @override
+  Future<NasaPicture?> findOnePicture(String id) async {
+    final data = await _instance.collection('picture').doc(id).get();
+
+    if(data != null) {
+      return NasaPicture.fromMap(data);
+    }
+
+    return null;
+  }
+
+  @override
+  Future<void> insertAll(List<NasaPicture> pictures) async {
+    for (var picture in pictures) {
+      await _instance.collection('picture').doc(picture.id).set(
+          picture.toMap()
+      );
+    }
   }
 }
