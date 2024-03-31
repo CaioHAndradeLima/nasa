@@ -35,11 +35,11 @@ class CustomTheme {
   static ThemeData defaultTheme(BuildContext context) {
     return ThemeData(
       colorScheme: ColorScheme.fromSeed(
-        seedColor: Colors.green,
+        seedColor: Colors.white,
         background: Colors.black,
       ),
       useMaterial3: true,
-      appBarTheme: const AppBarTheme(color: Colors.green),
+      appBarTheme: const AppBarTheme(color: Colors.black),
       textTheme: _defaultTextTheme(context),
     );
   }

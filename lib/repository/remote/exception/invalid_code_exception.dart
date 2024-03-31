@@ -1,4 +1,2 @@
 
-class InvalidCodeException extends Error {
-
-}
+class InvalidCodeException extends Error {}

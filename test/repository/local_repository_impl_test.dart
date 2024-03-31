@@ -3,7 +3,7 @@ import 'package:flutter_test/flutter_test.dart';
 import 'package:localstore/localstore.dart';
 import 'package:mockito/annotations.dart';
 import 'package:mockito/mockito.dart';
-import 'package:nasa_pictures/repository/local/local_repository_impl.dart';
+import 'package:nasa_pictures/domain/local_repository_impl.dart';
 import 'package:nasa_pictures/repository/model/nasa_picture.dart';
 import 'local_repository_impl_test.mocks.dart';
 

@@ -31,7 +31,7 @@ class _NasaDetailWidgetState extends State<NasaDetailWidget> {
   void initState() {
     GetIt.instance<PictureBloc>().add(PictureFindEvent(idPicture: widget.idPicture));
     super.initState();
-    Future.delayed(const Duration(milliseconds: 500), _toggleOpacity);
+    _toggleOpacity();
   }
 
   void _toggleOpacity() {

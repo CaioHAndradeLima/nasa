@@ -2,7 +2,7 @@
 import 'package:localstore/localstore.dart';
 import 'package:nasa_pictures/repository/local/filter/picture_local_filter.dart';
 import 'package:nasa_pictures/repository/model/nasa_picture.dart';
-import 'local_repository.dart';
+import '../repository/local/local_repository.dart';
 
 class LocalRepositoryImpl extends LocalRepository {
   late final Localstore _instance;

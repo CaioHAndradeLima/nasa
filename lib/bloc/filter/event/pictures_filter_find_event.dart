@@ -1,5 +1,5 @@
 
-import 'package:nasa_pictures/bloc/filter/picture_filter_event.dart';
+import 'package:nasa_pictures/bloc/filter/event/picture_filter_event.dart';
 
 class PicturesFindByFilter extends PictureFilterEvent {
   final String? title;

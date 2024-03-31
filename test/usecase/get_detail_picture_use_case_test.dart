@@ -7,15 +7,10 @@ import 'package:nasa_pictures/repository/model/nasa_picture.dart';
 import 'package:nasa_pictures/usecase/detail/get_detail_picture_not_found.dart';
 import 'package:nasa_pictures/usecase/detail/get_detail_picture_success.dart';
 import 'package:nasa_pictures/usecase/detail/get_detail_picture_use_case.dart';
-import 'get_detail_picture_use_case_test.mocks.dart';
+import 'get_pictures_use_case_test.mocks.dart';
 
 @GenerateMocks([
   LocalRepository
-], customMocks: [
-  MockSpec<LocalRepository>(
-    as: #MockLocalRepositoryRelaxed,
-    onMissingStub: OnMissingStub.returnDefault,
-  ),
 ])
 void main() {
   late GetDetailPictureUseCase useCase;

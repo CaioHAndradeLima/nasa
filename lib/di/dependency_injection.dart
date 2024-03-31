@@ -1,15 +1,17 @@
+
 import 'package:get_it/get_it.dart';
 import 'package:localstore/localstore.dart';
 import 'package:nasa_pictures/bloc/filter/picture_filter_bloc.dart';
 import 'package:nasa_pictures/bloc/picture/picture_bloc.dart';
 import 'package:nasa_pictures/bloc/pictures/pictures_bloc.dart';
 import 'package:nasa_pictures/repository/local/local_repository.dart';
-import 'package:nasa_pictures/repository/local/local_repository_impl.dart';
+import 'package:nasa_pictures/domain/local_repository_impl.dart';
 import 'package:nasa_pictures/repository/remote/remote_repository.dart';
-import 'package:nasa_pictures/repository/remote/remote_repository_impl.dart';
+import 'package:nasa_pictures/domain/remote_repository_impl.dart';
 import 'package:nasa_pictures/usecase/detail/get_detail_picture_use_case.dart';
 import 'package:nasa_pictures/usecase/filtering/get_pictures_filtering_use_case.dart';
 import 'package:nasa_pictures/usecase/pictures/get_pictures_use_case.dart';
+import 'package:http/http.dart' as http;
 
 class DependencyInject {
   static void setup() {
@@ -18,9 +20,11 @@ class DependencyInject {
     //repositories
     getIt.registerSingleton<LocalRepository>(LocalRepositoryImpl(
         instance: Localstore.instance
-
     ), signalsReady: true);
-    getIt.registerSingleton<RemoteRepository>(RemoteRepositoryImpl(), signalsReady: true);
+    getIt.registerSingleton<RemoteRepository>(
+      RemoteRepositoryImpl(httpClient: http.Client()),
+        signalsReady: true,
+    );
 
     //use cases
     getIt.registerSingleton<GetPicturesUseCase>(

@@ -12,7 +12,8 @@ class PictureLocalFilter {
 
   List<NasaPicture> applyFilter(List<NasaPicture> pictures) {
     return pictures
-        .where((picture) => picture.date == _date || (_title != null && picture.title.contains(_title)))
+        .where((picture) =>
+            picture.date == _date || (_title != null && picture.title.toLowerCase().contains(_title.toLowerCase())))
         .toList();
   }
 }
