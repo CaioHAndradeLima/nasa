@@ -1,10 +1,10 @@
 
-import 'package:nasa_pictures/repository/local/local_repository.dart';
-import 'package:nasa_pictures/repository/model/nasa_picture.dart';
-import 'package:nasa_pictures/usecase/detail/get_detail.dart';
-import 'package:nasa_pictures/usecase/detail/get_detail_picture_not_found.dart';
-import 'package:nasa_pictures/usecase/detail/get_detail_picture_success.dart';
-import 'package:nasa_pictures/usecase/use_case.dart';
+import 'package:nasa_pictures/domain/usecase/detail/get_detail_picture_success.dart';
+import 'package:nasa_pictures/data/local/local_repository.dart';
+import 'package:nasa_pictures/data/model/nasa_picture.dart';
+import 'package:nasa_pictures/domain/usecase/detail/get_detail.dart';
+import 'package:nasa_pictures/domain/usecase/detail/get_detail_picture_not_found.dart';
+import 'package:nasa_pictures/domain/usecase/use_case.dart';
 
 class GetDetailPictureUseCase extends UseCase<String, GetDetailPicture> {
   late final LocalRepository _localRepository;

@@ -2,11 +2,11 @@
 import 'package:flutter_test/flutter_test.dart';
 import 'package:mockito/annotations.dart';
 import 'package:mockito/mockito.dart';
-import 'package:nasa_pictures/repository/local/local_repository.dart';
-import 'package:nasa_pictures/repository/model/nasa_picture.dart';
-import 'package:nasa_pictures/usecase/detail/get_detail_picture_not_found.dart';
-import 'package:nasa_pictures/usecase/detail/get_detail_picture_success.dart';
-import 'package:nasa_pictures/usecase/detail/get_detail_picture_use_case.dart';
+import 'package:nasa_pictures/data/local/local_repository.dart';
+import 'package:nasa_pictures/data/model/nasa_picture.dart';
+import 'package:nasa_pictures/domain/usecase/detail/get_detail_picture_not_found.dart';
+import 'package:nasa_pictures/domain/usecase/detail/get_detail_picture_success.dart';
+import 'package:nasa_pictures/domain/usecase/detail/get_detail_picture_use_case.dart';
 import 'get_pictures_use_case_test.mocks.dart';
 
 @GenerateMocks([

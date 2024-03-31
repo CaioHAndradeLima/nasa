@@ -3,9 +3,9 @@ import 'dart:io';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:get_it/get_it.dart';
-import 'package:nasa_pictures/feature/detail/nasa_details_widget.dart';
+import 'package:nasa_pictures/presentation/detail/widget/nasa_details_widget.dart';
 
-import '../bloc/picture/picture_bloc.dart';
+import '../presentation/detail/bloc/picture_bloc.dart';
 
 class Navigate {
 

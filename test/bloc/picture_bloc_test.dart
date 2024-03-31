@@ -2,14 +2,14 @@
 import 'package:flutter_test/flutter_test.dart';
 import 'package:mockito/annotations.dart';
 import 'package:mockito/mockito.dart';
-import 'package:nasa_pictures/bloc/pictures/event/pictures_find_all_event.dart';
-import 'package:nasa_pictures/bloc/pictures/state/pictures_error_state.dart';
-import 'package:nasa_pictures/bloc/pictures/state/pictures_loading_state.dart';
-import 'package:nasa_pictures/bloc/pictures/state/pictures_success_state.dart';
-import 'package:nasa_pictures/usecase/pictures/get_pictures_request_fail.dart';
-import 'package:nasa_pictures/usecase/pictures/get_pictures_success.dart';
-import 'package:nasa_pictures/usecase/pictures/get_pictures_use_case.dart';
-import 'package:nasa_pictures/bloc/pictures/pictures_bloc.dart';
+import 'package:nasa_pictures/presentation/pictures/bloc/pictures/event/pictures_find_all_event.dart';
+import 'package:nasa_pictures/presentation/pictures/bloc/pictures/state/pictures_error_state.dart';
+import 'package:nasa_pictures/presentation/pictures/bloc/pictures/state/pictures_loading_state.dart';
+import 'package:nasa_pictures/presentation/pictures/bloc/pictures/state/pictures_success_state.dart';
+import 'package:nasa_pictures/domain/usecase/pictures/get_pictures_request_fail.dart';
+import 'package:nasa_pictures/domain/usecase/pictures/get_pictures_success.dart';
+import 'package:nasa_pictures/domain/usecase/pictures/get_pictures_use_case.dart';
+import 'package:nasa_pictures/presentation/pictures/bloc/pictures/pictures_bloc.dart';
 import '../model/nasa_picture.dart';
 import 'picture_bloc_test.mocks.dart';
 

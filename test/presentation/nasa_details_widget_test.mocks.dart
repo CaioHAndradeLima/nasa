@@ -6,8 +6,8 @@
 import 'dart:async' as _i4;
 
 import 'package:mockito/mockito.dart' as _i1;
-import 'package:nasa_pictures/usecase/detail/get_detail.dart' as _i2;
-import 'package:nasa_pictures/usecase/detail/get_detail_picture_use_case.dart'
+import 'package:nasa_pictures/domain/usecase/detail/get_detail.dart' as _i2;
+import 'package:nasa_pictures/domain/usecase/detail/get_detail_picture_use_case.dart'
     as _i3;
 
 // ignore_for_file: type=lint

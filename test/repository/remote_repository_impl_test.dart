@@ -3,9 +3,9 @@ import 'package:flutter_test/flutter_test.dart';
 import 'package:http/http.dart' as http;
 import 'package:mockito/annotations.dart';
 import 'package:mockito/mockito.dart';
-import 'package:nasa_pictures/repository/remote/exception/connection_exception.dart';
-import 'package:nasa_pictures/repository/remote/exception/invalid_code_exception.dart';
-import 'package:nasa_pictures/domain/remote_repository_impl.dart';
+import 'package:nasa_pictures/data/remote/exception/connection_exception.dart';
+import 'package:nasa_pictures/data/remote/exception/invalid_code_exception.dart';
+import 'package:nasa_pictures/domain/repository/remote_repository_impl.dart';
 import 'remote_repository_impl_test.mocks.dart';
 
 @GenerateMocks([

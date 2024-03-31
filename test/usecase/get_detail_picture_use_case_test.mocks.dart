@@ -6,10 +6,9 @@
 import 'dart:async' as _i3;
 
 import 'package:mockito/mockito.dart' as _i1;
-import 'package:nasa_pictures/repository/local/filter/picture_local_filter.dart'
-    as _i5;
-import 'package:nasa_pictures/repository/local/local_repository.dart' as _i2;
-import 'package:nasa_pictures/repository/model/nasa_picture.dart' as _i4;
+import 'package:nasa_pictures/data/local/local_repository.dart' as _i2;
+import 'package:nasa_pictures/data/local/picture_local_filter.dart' as _i5;
+import 'package:nasa_pictures/data/model/nasa_picture.dart' as _i4;
 
 // ignore_for_file: type=lint
 // ignore_for_file: avoid_redundant_argument_values

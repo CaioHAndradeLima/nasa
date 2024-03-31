@@ -6,11 +6,11 @@
 import 'dart:async' as _i4;
 
 import 'package:mockito/mockito.dart' as _i1;
-import 'package:nasa_pictures/usecase/filtering/get_pictures_filtering.dart'
+import 'package:nasa_pictures/domain/usecase/filtering/get_pictures_filtering.dart'
     as _i2;
-import 'package:nasa_pictures/usecase/filtering/get_pictures_filtering_in.dart'
+import 'package:nasa_pictures/domain/usecase/filtering/get_pictures_filtering_in.dart'
     as _i5;
-import 'package:nasa_pictures/usecase/filtering/get_pictures_filtering_use_case.dart'
+import 'package:nasa_pictures/domain/usecase/filtering/get_pictures_filtering_use_case.dart'
     as _i3;
 
 // ignore_for_file: type=lint

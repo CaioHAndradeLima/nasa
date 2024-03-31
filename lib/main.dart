@@ -2,7 +2,7 @@
 import 'package:fluro/fluro.dart';
 import 'package:flutter/material.dart';
 import 'package:nasa_pictures/di/dependency_injection.dart';
-import 'package:nasa_pictures/feature/pictures/nasa_pictures_widget.dart';
+import 'package:nasa_pictures/presentation/pictures/widget/nasa_pictures_widget.dart';
 import 'package:nasa_pictures/route/app_route.dart';
 import 'package:nasa_pictures/theme/custom_theme.dart';
 

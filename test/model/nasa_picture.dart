@@ -1,5 +1,5 @@
 
-import 'package:nasa_pictures/repository/model/nasa_picture.dart';
+import 'package:nasa_pictures/data/model/nasa_picture.dart';
 
 class NasaPictureTest extends NasaPicture {
   NasaPictureTest({

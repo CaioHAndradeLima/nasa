@@ -1,16 +1,16 @@
 
 import 'package:get_it/get_it.dart';
 import 'package:localstore/localstore.dart';
-import 'package:nasa_pictures/bloc/filter/picture_filter_bloc.dart';
-import 'package:nasa_pictures/bloc/picture/picture_bloc.dart';
-import 'package:nasa_pictures/bloc/pictures/pictures_bloc.dart';
-import 'package:nasa_pictures/repository/local/local_repository.dart';
-import 'package:nasa_pictures/domain/local_repository_impl.dart';
-import 'package:nasa_pictures/repository/remote/remote_repository.dart';
-import 'package:nasa_pictures/domain/remote_repository_impl.dart';
-import 'package:nasa_pictures/usecase/detail/get_detail_picture_use_case.dart';
-import 'package:nasa_pictures/usecase/filtering/get_pictures_filtering_use_case.dart';
-import 'package:nasa_pictures/usecase/pictures/get_pictures_use_case.dart';
+import 'package:nasa_pictures/presentation/pictures/bloc/filter/picture_filter_bloc.dart';
+import 'package:nasa_pictures/presentation/detail/bloc/picture_bloc.dart';
+import 'package:nasa_pictures/presentation/pictures/bloc/pictures/pictures_bloc.dart';
+import 'package:nasa_pictures/data/local/local_repository.dart';
+import 'package:nasa_pictures/domain/repository/local_repository_impl.dart';
+import 'package:nasa_pictures/data/remote/remote_repository.dart';
+import 'package:nasa_pictures/domain/repository/remote_repository_impl.dart';
+import 'package:nasa_pictures/domain/usecase/detail/get_detail_picture_use_case.dart';
+import 'package:nasa_pictures/domain/usecase/filtering/get_pictures_filtering_use_case.dart';
+import 'package:nasa_pictures/domain/usecase/pictures/get_pictures_use_case.dart';
 import 'package:http/http.dart' as http;
 
 class DependencyInject {
