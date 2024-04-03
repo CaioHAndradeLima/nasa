@@ -6,15 +6,19 @@
 </head>
 <body>
 
-## Flutter
+## Flutter Project (Android/IOS)
 
-| Feature/Project                     |
+## Nasa pictures 
+
+
+
+| Feature                             | implementation
 |-------------------------------------|------------------------------
 | Infinite Scroll or pagination       | ✘                            
 | Detail Screen                       | ✓                            
 | Transition Animation                | ✓                            
 | Image Internal Cache                | ✓                            
-| Inject Dependency                   | GetIt                         
+| Inject Dependency                   | ✓ GetIt                         
 | Good Coverage                       | ✓                            
 | Unit Tests                          | ✓                            
 | UI Tests                            | ✓                            
@@ -24,7 +28,7 @@
 
 ## Package organization
 
-| Packages                            |
+| Packages                            | description
 |-------------------------------------|------------------------------
 | Common                              | Common files for any module/package                            
 | Data                                | Define contract interface and repository layer                           
@@ -46,7 +50,7 @@ Presentation <-> Bloc <-> UseCase <-> Repository
 * the project was projected to run into Android and IOS devices
 * the project should have Unit Tests and UI Tests
 
-##Warning
+## Warning
 in the real scenery, the best way to handle with local storage behavior is requesting information from Api, and just when api request fail, try find local information. 
 
 <h1> Run the project </h1>
