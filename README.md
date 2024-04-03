@@ -1,17 +1,61 @@
-# nasa_pictures
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+</head>
+<body>
 
-A new Flutter project.
+## Flutter
 
-## Getting Started
+| Feature/Project                     |
+|-------------------------------------|------------------------------
+| Infinite Scroll or pagination       | ✘                            
+| Detail Screen                       | ✓                            
+| Transition Animation                | ✓                            
+| Image Internal Cache                | ✓                            
+| Inject Dependency                   | GetIt                         
+| Good Coverage                       | ✓                            
+| Unit Tests                          | ✓                            
+| UI Tests                            | ✓                            
+| Video adaptation                    | ✘ (Some videos come from Vimeo platform and the App don't consider it yet)
+| Best image size all screens sizes   | ✘ (the best way is calculate the screen size and consider the image proportion (width x height) and find the better size)
 
-This project is a starting point for a Flutter application.
 
-A few resources to get you started if this is your first Flutter project:
+## Package organization
 
-- [Lab: Write your first Flutter app](https://docs.flutter.dev/get-started/codelab)
-- [Cookbook: Useful Flutter samples](https://docs.flutter.dev/cookbook)
+| Packages                            |
+|-------------------------------------|------------------------------
+| Common                              | Common files for any module/package                            
+| Data                                | Define contract interface and repository layer                           
+| Domain                              | Repository implementation and application use cases                  
+| Presentation                        | UI Layer and Bloc (business logic)                            
+| route                               | Fluro implementation, help navigate inside App widgets                         
+| theme                               | Define colors, styles and more                            
 
-For help getting started with Flutter development, view the
-[online documentation](https://docs.flutter.dev/), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
-# nasa
+
+## Architecture organization
+
+Presentation <-> Bloc <-> UseCase <-> Repository
+
+## Business Rules
+
+* the project request information from Api just when didn't find local
+* the project should show local information if saved before
+* the project should keep last state while running without network
+* the project was projected to run into Android and IOS devices
+* the project should have Unit Tests and UI Tests
+
+##Warning
+in the real scenery, the best way to handle with local storage behavior is requesting information from Api, and just when api request fail, try find local information. 
+
+<h1> Run the project </h1>
+
+just run 'flutter pub get' and then 'flutter build'
+
+<h1> Run the tests </h1>
+
+flutter test --coverage
+
+</body>
+</html>
