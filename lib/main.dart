@@ -2,15 +2,17 @@
 import 'package:fluro/fluro.dart';
 import 'package:flutter/material.dart';
 import 'package:nasa_pictures/di/dependency_injection.dart';
-import 'package:nasa_pictures/presentation/pictures/widget/nasa_pictures_widget.dart';
 import 'package:nasa_pictures/route/app_route.dart';
 import 'package:nasa_pictures/theme/custom_theme.dart';
+import 'package:flutter_gen/gen_l10n/app_localizations.dart';
 
-void main() {
+void main() async {
   DependencyInject.setup();
   WidgetsFlutterBinding.ensureInitialized();
   final FluroRouter router = FluroRouter();
   AppRouter().routes(router);
+  await DependencyInject.setupLocalizations();
+
   runApp(MyApp(router: router));
 }
 
@@ -27,7 +29,8 @@ class MyApp extends StatelessWidget {
       debugShowCheckedModeBanner: false,
       onGenerateRoute: router.generator,
       initialRoute: 'home',
-      home: const NasaPicturesWidget(),
+      localizationsDelegates: AppLocalizations.localizationsDelegates,
+      supportedLocales: AppLocalizations.supportedLocales,
     );
   }
 }

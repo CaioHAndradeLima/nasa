@@ -4,6 +4,7 @@ import 'package:flutter_test/flutter_test.dart';
 import 'package:get_it/get_it.dart';
 import 'package:mockito/annotations.dart';
 import 'package:nasa_pictures/data/model/nasa_picture.dart';
+import 'package:nasa_pictures/di/dependency_injection.dart';
 import 'package:nasa_pictures/presentation/pictures/bloc/filter/picture_filter_bloc.dart';
 import 'package:nasa_pictures/presentation/pictures/bloc/filter/state/picture_filter_empty_state.dart';
 import 'package:nasa_pictures/presentation/pictures/bloc/filter/state/picture_filter_no_results_state.dart';
@@ -25,6 +26,7 @@ void main() {
   group('ExhibitionPicturesWidget Tests', () {
     late PicturesFilterBloc mockPicturesFilterBloc;
     GetIt.I.registerLazySingleton<PicturesFilterBloc>(() => mockPicturesFilterBloc);
+    DependencyInject.setupLocalizations();
 
     setUp(() {
       mockPicturesFilterBloc = PicturesFilterBloc(getPicturesFilteringUseCase: MockGetPicturesFilteringUseCaseRelaxed());

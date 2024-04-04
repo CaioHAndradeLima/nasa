@@ -2,6 +2,7 @@ import 'package:cached_network_image/cached_network_image.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:get_it/get_it.dart';
+import 'package:nasa_pictures/common/ui/strings_mixin.dart';
 import 'package:nasa_pictures/presentation/pictures/bloc/filter/picture_filter_bloc.dart';
 import 'package:nasa_pictures/presentation/pictures/bloc/filter/state/picture_filter_empty_state.dart';
 import 'package:nasa_pictures/presentation/pictures/bloc/filter/state/picture_filter_no_results_state.dart';
@@ -14,10 +15,10 @@ import 'package:nasa_pictures/common/ui/nasa_error_widget.dart';
 import 'package:nasa_pictures/data/model/nasa_picture.dart';
 import 'package:nasa_pictures/route/navigate.dart';
 
-class ExhibitionPicturesWidget extends StatelessWidget {
+class ExhibitionPicturesWidget extends StatelessWidget with StringsMixin {
   final List<NasaPicture> listPicture;
 
-  const ExhibitionPicturesWidget({super.key, required this.listPicture});
+  ExhibitionPicturesWidget({super.key, required this.listPicture});
 
   @override
   Widget build(BuildContext context) {
@@ -37,8 +38,7 @@ class ExhibitionPicturesWidget extends StatelessWidget {
                 );
           },
           decoration: InputDecoration(
-            //TODO REMOVE HARDCODE STRING
-            hintText: 'Search by title or date',
+            hintText: strings.text_field_hint_message,
             prefixIcon: const Icon(Icons.search),
             border: OutlineInputBorder(
               borderRadius: BorderRadius.circular(8),
@@ -59,9 +59,8 @@ class ExhibitionPicturesWidget extends StatelessWidget {
                   case const (PictureFilterEmptyState):
                     return _getPicturesWidget(listPicture);
                   case const (PictureFilterNoResultsState):
-                    return const NasaErrorWidget(
-                      //TODO REMOVE HARDCODE STRING
-                      description: 'not found information looking for contains title or date',
+                    return NasaErrorWidget(
+                      description: strings.error_filter_message,
                     );
                   case const (PictureFilterSuccessState):
                     return _getPicturesWidget(
@@ -102,7 +101,7 @@ class ExhibitionPicturesWidget extends StatelessWidget {
                           width: MediaQuery.of(context).size.width * 0.25,
                           height: MediaQuery.of(context).size.width * 0.25,
                           imageUrl: pictures[index].url,
-                          fit: BoxFit.fill,
+                          fit: BoxFit.fitWidth,
                           placeholder: (context, url) => const LoadingWidget(),
                           errorWidget: (context, url, error) => const Icon(Icons.error),
                         ),

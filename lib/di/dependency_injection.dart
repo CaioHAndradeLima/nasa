@@ -1,6 +1,8 @@
 
+import 'package:flutter/material.dart';
 import 'package:get_it/get_it.dart';
 import 'package:localstore/localstore.dart';
+import 'package:nasa_pictures/common/strings.dart';
 import 'package:nasa_pictures/presentation/pictures/bloc/filter/picture_filter_bloc.dart';
 import 'package:nasa_pictures/presentation/detail/bloc/picture_bloc.dart';
 import 'package:nasa_pictures/presentation/pictures/bloc/pictures/pictures_bloc.dart';
@@ -12,6 +14,7 @@ import 'package:nasa_pictures/domain/usecase/detail/get_detail_picture_use_case.
 import 'package:nasa_pictures/domain/usecase/filtering/get_pictures_filtering_use_case.dart';
 import 'package:nasa_pictures/domain/usecase/pictures/get_pictures_use_case.dart';
 import 'package:http/http.dart' as http;
+import 'package:flutter_gen/gen_l10n/app_localizations.dart';
 
 class DependencyInject {
   static void setup() {
@@ -56,5 +59,13 @@ class DependencyInject {
     getIt.registerLazySingleton<PictureBloc>(() {
       return PictureBloc(getDetailPicture: getIt<GetDetailPictureUseCase>());
     });
+  }
+
+  static Future<void> setupLocalizations() async {
+    GetIt.I.registerSingleton<Strings>(
+        Strings(
+          appLocalizations: await AppLocalizations.delegate.load(const Locale('en')),
+        )
+    );
   }
 }

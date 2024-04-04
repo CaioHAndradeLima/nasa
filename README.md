@@ -12,18 +12,19 @@
 
 
 
-| Feature                             | implementation
-|-------------------------------------|------------------------------
-| Infinite Scroll or pagination       | ✘                            
-| Detail Screen                       | ✓                            
-| Transition Animation                | ✓                            
-| Image Internal Cache                | ✓                            
-| Inject Dependency                   | ✓ GetIt                         
-| Good Coverage                       | ✓                            
-| Unit Tests                          | ✓                            
-| UI Tests                            | ✓                            
-| Video adaptation                    | ✘ (Some videos come from Vimeo platform and the App don't consider it yet)
-| Best image size all screens sizes   | ✘ (the best way is calculate the screen size and consider the image proportion (width x height) and find the better size)
+| Feature                       | implementation
+|-------------------------------|------------------------------
+| Infinite Scroll or pagination | ✘                            
+| List Refresh                  | ✘                            
+| Detail Screen                 | ✓                            
+| Transition Animation          | ✓                            
+| Image Internal Cache          | ✓                            
+| Inject Dependency             | ✓ GetIt                         
+| Good Coverage                 | ✓                            
+| Unit Tests                    | ✓                            
+| UI Tests                      | ✓                            
+| Video adaptation              | ✘ (Some videos come from Vimeo platform and the App don't consider it yet)
+| Best image size               | ✘ (the best way is calculate the screen size and consider the image proportion (width x height) and find the better size)
 
 
 ## Package organization
@@ -44,14 +45,11 @@ Presentation <-> Bloc <-> UseCase <-> Repository
 
 ## Business Rules
 
-* the project request information from Api just when didn't find local
-* the project should show local information if saved before
+* the project request information from Api
+* the project should show local information if api requests fail
 * the project should keep last state while running without network
 * the project was projected to run into Android and IOS devices
 * the project should have Unit Tests and UI Tests
-
-## Warning
-in the real scenery, the best way to handle with local storage behavior is requesting information from Api, and just when api request fail, try find local information. 
 
 <h1> Run the project </h1>
 

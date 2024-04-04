@@ -1,0 +1,7 @@
+{
+  "@@locale": "en",
+  "name_app": "Nasa Pictures",
+  "text_field_hint_message": "Search by title or date",
+  "error_general_message": "Not found information. Please try again later",
+  "error_filter_message": "not found information looking for contains title or date"
+}

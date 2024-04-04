@@ -25,7 +25,7 @@ class NasaDetailWidget extends StatefulWidget {
 
 class _NasaDetailWidgetState extends State<NasaDetailWidget> {
   double _opacityLevel = 0.0;
-  late double heightImage = MediaQuery.of(context).size.width * 1.3;
+  late double heightImage = MediaQuery.of(context).size.height * 0.7;
 
   @override
   void initState() {
@@ -58,14 +58,14 @@ class _NasaDetailWidgetState extends State<NasaDetailWidget> {
                   case const (PictureLoadingState):
                     return const LoadingWidget();
                   case const (PictureErrorState):
-                    return const NasaErrorWidget();
+                    return NasaErrorWidget();
                   case const (PictureSuccessState):
                     return _buildPictureUI(
                       (state as PictureSuccessState).picture,
                     );
                 }
 
-                return const NasaErrorWidget();
+                return NasaErrorWidget();
               },
             ),
           ),
@@ -92,7 +92,7 @@ class _NasaDetailWidgetState extends State<NasaDetailWidget> {
       child: CachedNetworkImage(
         imageUrl: picture.url,
         height: heightImage,
-        fit: BoxFit.cover,
+        fit: BoxFit.fitWidth,
         placeholder: (context, string) {
           return const Center(
             child: LoadingWidget(),

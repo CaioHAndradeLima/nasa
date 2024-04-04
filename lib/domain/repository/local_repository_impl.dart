@@ -43,4 +43,9 @@ class LocalRepositoryImpl extends LocalRepository {
       );
     }
   }
+
+  @override
+  Future<void> deleteAll() async {
+    _instance.collection('pictures').delete();
+  }
 }

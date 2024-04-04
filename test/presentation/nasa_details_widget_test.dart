@@ -4,6 +4,7 @@ import 'package:flutter_test/flutter_test.dart';
 import 'package:get_it/get_it.dart';
 import 'package:mockito/annotations.dart';
 import 'package:nasa_pictures/data/model/nasa_picture.dart';
+import 'package:nasa_pictures/di/dependency_injection.dart';
 import 'package:nasa_pictures/domain/usecase/detail/get_detail_picture_use_case.dart';
 import 'package:nasa_pictures/presentation/detail/bloc/picture_bloc.dart';
 import 'package:nasa_pictures/presentation/detail/bloc/state/picture_error_state.dart';
@@ -27,6 +28,7 @@ void main() {
   group('NasaDetailWidget Tests', () {
     late PictureBloc mockPictureBloc;
     GetIt.I.registerLazySingleton<PictureBloc>(() => mockPictureBloc);
+    DependencyInject.setupLocalizations();
 
     setUp(() {
       mockPictureBloc = PictureBloc(getDetailPicture: MockGetDetailPictureUseCaseRelaxed());
