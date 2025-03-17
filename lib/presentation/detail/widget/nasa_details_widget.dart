@@ -44,6 +44,7 @@ class _NasaDetailWidgetState extends State<NasaDetailWidget> {
   Widget build(BuildContext context) {
     return Scaffold(
       extendBodyBehindAppBar: true,
+      backgroundColor: Theme.of(context).colorScheme.background,
       body: Stack(
         children: [
           MultiBlocProvider(
