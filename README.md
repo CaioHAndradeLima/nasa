@@ -8,6 +8,12 @@
 
 ## Flutter Project (Android/IOS)
 
+
+## Package organization
+
+Flutter version 3.29.2
+
+
 ## Nasa pictures 
 
 
