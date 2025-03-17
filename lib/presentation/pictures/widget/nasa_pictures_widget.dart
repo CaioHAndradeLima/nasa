@@ -32,6 +32,7 @@ class _NasaPicturesWidgetState extends State<NasaPicturesWidget> with StringsMix
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      backgroundColor: Theme.of(context).colorScheme.background,
       appBar: AppBarWidget(
         Text(
           strings.name_app,
