@@ -1,0 +1,2 @@
+/Users/caiohenrique/StudioProjects/nasa/android/app/.cxx/Debug/435z1d6h/armeabi-v7a/CMakeFiles/edit_cache.dir
+/Users/caiohenrique/StudioProjects/nasa/android/app/.cxx/Debug/435z1d6h/armeabi-v7a/CMakeFiles/rebuild_cache.dir
