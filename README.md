@@ -8,15 +8,27 @@
 
 ## Flutter Project (Android/IOS)
 
-
-## Package organization
-
 Flutter version 3.29.2
 
 
-## Nasa pictures 
+## Screenshots
 
+<table>
+  <tr>
+    <td align="center">
+      Main Page
+      <br>
+      <img src="https://github.com/user-attachments/assets/5ebda40c-b224-4159-8316-ddefd3d5f5a5" height="300" style="margin-right: 20px;" />
+    </td>
+    <td align="center">
+      Details Page
+      <br>
+      <img src="https://github.com/user-attachments/assets/82df1a73-836b-472f-a511-84cfd14492e4" height="300" />
+    </td>
+  </tr>
+</table>
 
+## Features
 
 | Feature                       | implementation
 |-------------------------------|------------------------------
